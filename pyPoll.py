@@ -12,7 +12,7 @@ candidate_options = []
 # Initializing votes for each candidate
 candidate_votes = {}
 #Track the winning candidate, vote count, and percentage
-winning_candidate = ""
+winning_candidate = ""  
 winning_count = 0
 winning_percentage = 0
 
@@ -52,10 +52,10 @@ with open(file_to_save, "w") as txt_file:
         # print each candidate's name, percentage and total votes to terminal
         print(election_results, end="")
         txt_file.write(election_results)
-    if votes > winning_count and vote_percentage > winning_percentage:
-        winning_count = votes
-        winning_percentage = vote_percentage
-        winning_candidate = candidate_name
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+            winning_count = votes
+            winning_percentage = vote_percentage
+            winning_candidate = candidate_name
     # Print the winning candidates' results to the terminal.
     winning_candidate_summary = (
     f"-------------------------\n"
